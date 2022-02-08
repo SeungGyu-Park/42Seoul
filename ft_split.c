@@ -6,13 +6,13 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:28:26 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/08 00:30:22 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/08 14:54:55 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	find_split_cnt(const char *s, char c)
+static size_t	find_split_cnt(const char *s, char c)
 {
 	size_t	row_cnt;
 	size_t	i;
@@ -34,7 +34,7 @@ size_t	find_split_cnt(const char *s, char c)
 	return (row_cnt);
 }
 
-size_t	find_str_len(char const *s, char c, size_t *s_len)
+static size_t	find_str_len(char const *s, char c, size_t *s_len)
 {
 	size_t	start;
 	size_t	end;
@@ -50,7 +50,7 @@ size_t	find_str_len(char const *s, char c, size_t *s_len)
 	return (s_idx);
 }
 
-char	**free_res(char **res)
+static char	**free_res(char **res)
 {
 	size_t	idx;
 

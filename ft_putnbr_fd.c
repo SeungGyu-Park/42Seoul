@@ -6,13 +6,13 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:28:21 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/07 22:21:02 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/08 14:54:23 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnber_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	*str;
 

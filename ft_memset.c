@@ -6,13 +6,13 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:28:11 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/07 22:14:50 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/08 14:52:45 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memset(void *ptr, int value, size_t n)
+void	*ft_memset(void *ptr, int value, size_t n)
 {
 	size_t			i;
 	unsigned char	*tmp;
