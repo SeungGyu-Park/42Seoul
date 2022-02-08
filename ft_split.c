@@ -85,6 +85,6 @@ char	**ft_split(char const *s, char c)
 			return (free_res(res));
 		ft_strlcpy(res[row_idx++], s + s_idx - s_len, s_len + 1);
 	}
-	res[row_idx] = '\0';
+	res[row_idx] = 0;
 	return (res);
 }

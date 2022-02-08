@@ -6,7 +6,7 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:27:25 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/07 17:56:11 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/08 19:41:03 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,17 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	len = ft_len(n);
-	res = (char *)ft_calloc(len + 1, sizeof(char));
+	res = (char *)malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
 	res_idx = 0;
 	n_tmp = n;
 	if (n < 0)
 	{
-		res[res_idx] = '-';
+		res[res_idx++] = '-';
 		n_tmp *= -1;
 	}
 	ft_insert_integer(res, &res_idx, n_tmp);
-	res[res_idx] = '\0';
+	res[res_idx] = 0;
 	return (res);
 }

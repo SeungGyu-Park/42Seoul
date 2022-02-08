@@ -6,7 +6,7 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:28:21 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/08 14:54:23 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/08 19:42:57 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483638", 11);
+		write(fd, "-2147483648", 11);
 		return ;
 	}
 	str = ft_itoa(n);
-	ft_putstr_fd(str, fd);
+	ft_putstr_fd(str, 1);
 	free(str);
 	return ;
 }

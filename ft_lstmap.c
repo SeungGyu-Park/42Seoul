@@ -6,7 +6,7 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:27:49 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/07 19:20:32 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/08 19:47:13 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*head;
 
+	if (lst == NULL || f == NULL || del == NULL)
+		return (NULL);
 	head = NULL;
 	while (lst)
 	{
@@ -27,6 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&head, new);
+		new = new->next;
 		lst = lst->next;
 	}
 	return (head);
