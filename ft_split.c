@@ -6,7 +6,7 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:28:26 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/08 14:54:55 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/08 20:22:31 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ char	**ft_split(char const *s, char c)
 	size_t	row_cnt;
 	size_t	row_idx;
 
-	if (!s)
-		return ((char **)0);
+	if (s == NULL)
+		return (0);
 	row_cnt = find_split_cnt(s, c);
 	res = (char **)malloc((row_cnt + 1) * sizeof(char *));
 	if (!res)
-		return ((char **)0);
+		return (0);
 	s_idx = 0;
 	row_idx = 0;
 	while (row_idx < row_cnt)
@@ -85,6 +85,6 @@ char	**ft_split(char const *s, char c)
 			return (free_res(res));
 		ft_strlcpy(res[row_idx++], s + s_idx - s_len, s_len + 1);
 	}
-	res[row_idx] = 0;
+	res[row_idx] = NULL;
 	return (res);
 }
