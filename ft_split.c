@@ -6,19 +6,21 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:28:26 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/09 11:52:25 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/09 13:06:31 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	find_split_cnt(const char *s, char c)
+static size_t	find_split_cnt(const char *s, char c, int *it, int *rt)
 {
 	size_t	row_cnt;
 	size_t	i;
 
 	row_cnt = 0;
 	i = 0;
+	*it = -1;
+	*rt = -1;
 	while (s[i] != '\0')
 	{
 		if (s[i] != c)
@@ -49,15 +51,13 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	int		i;
 	int		len;
-	int		res_idx;
+	int		ri;
 
 	if (!s)
 		return (NULL);
-	res = (char **)malloc((find_split_cnt(s, c) + 1) * sizeof(char *));
+	res = (char **)malloc((find_split_cnt(s, c, &i, &ri) + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
-	i = -1;
-	res_idx = -1;
 	while (s[++i] != '\0')
 	{
 		if (s[i] != c)
@@ -65,12 +65,12 @@ char	**ft_split(char const *s, char c)
 			len = 0;
 			while (s[i + len] != c && s[i + len] != '\0')
 				len++;
-			res[++res_idx] = ft_substr(s, i, len);
-			if (res[res_idx] == NULL)
+			res[++ri] = ft_substr(s, i, len);
+			if (res[ri] == NULL)
 				return (free_res(res));
 			i += len - 1;
 		}
 	}
-	res[++res_idx] = NULL;
+	res[++ri] = NULL;
 	return (res);
 }
