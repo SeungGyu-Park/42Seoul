@@ -6,13 +6,12 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 17:52:18 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/08 14:59:25 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/09 13:55:02 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
 # include <stdlib.h>
 # include <unistd.h>
 

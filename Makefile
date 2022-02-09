@@ -1,6 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
+HEADER = libft.h
 SRCS = ft_atoi.c \
 			ft_isalnum.c \
 			ft_isalpha.c \
@@ -47,15 +48,15 @@ BSRCS = ft_lstnew.c \
 OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 
+all: $(NAME)
+
 $(NAME): $(OBJS)
 	ar cr $@ $^
 
-all: $(NAME)
+bonus:
+	@make 'OBJS = $(OBJS) $(BOBJS)' all
 
-bonus : $(BOBJS) $(OBJS)
-	ar cr $(NAME) $^
-
-%.o: %.c
+%.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
