@@ -6,7 +6,7 @@
 /*   By: seunggpa <seunggpa@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 18:28:26 by seunggpa          #+#    #+#             */
-/*   Updated: 2022/02/08 20:55:55 by seunggpa         ###   ########.fr       */
+/*   Updated: 2022/02/09 11:27:30 by seunggpa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char	**ft_split(char const *s, char c)
 	int		len;
 	int		res_idx;
 
+	if (!s)
+		return (NULL);
 	res = (char **)malloc((find_split_cnt(s, c) + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
